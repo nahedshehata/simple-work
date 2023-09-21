@@ -1,10 +1,15 @@
-#website for adding and editing articles using Laravel
-<img src="https://user-images.githubusercontent.com[simple.webm](https://github.com/nahedshehata/simple-work/assets/109394234/8ab9a434-aed7-40d0-8f7d-34f69eef205b)
-" width="300" height="650">
+###website for adding and editing articles using Laravel
+
+[simple.webm](https://github.com/nahedshehata/simple-work/assets/109394234/9cb5121f-45f1-4a47-8589-61859dc5a9e5)
 
 
 
-![Screenshot 2023-09-21 214945](https://github.com/nahedshehata/simple-work/assets/109394234/c86122c8-2271-41e8-8f1a-53318b815a40)
-![Screenshot 2023-09-21 215120](https://github.com/nahedshehata/simple-work/assets/109394234/b5b9da93-b954-44d4-8012-10b346472490)
-![Screenshot 2023-09-21 215051](https://github.com/nahedshehata/simple-work/assets/109394234/62aa407e-1f77-46dc-a0c2-36fcd5d246b3)
-![Screenshot 2023-09-21 215014](https://github.com/nahedshehata/simple-work/assets/109394234/dadc7713-a1f8-4fa3-9bec-77febf3a663d)
+![Screenshot 2023-09-21 214945](https://github.com/nahedshehata/simple-work/assets/109394234/a726f4be-f9ef-4294-b953-59843e71834f) // for home
+![Screenshot 2023-09-21 215014](https://github.com/nahedshehata/simple-work/assets/109394234/693e116d-aa3d-4f70-be0f-aa276580867f) //about
+
+![Screenshot 2023-09-21 215051](https://github.com/nahedshehata/simple-work/assets/109394234/c69df4cf-6e58-47cd-bf6f-6dbc7e86a0e6)//create article
+
+![Screenshot 2023-09-21 215120](https://github.com/nahedshehata/simple-work/assets/109394234/367b55e4-5469-4e15-be43-df6be9c0b119)//view
+
+
+
