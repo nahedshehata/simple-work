@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use App\Models\Article;
+use App\Models\Tag;
 use Illuminate\Http\Request;
 
 class ArticleController extends Controller
@@ -13,28 +14,28 @@ class ArticleController extends Controller
         return view('article.show',['article'=>$article]);
     }
     public function index(){
-        $articles=Article::latest()->get();
+        if(request('tag'))
+        {
+            $articles = Tag::where('name', request('tag'))->firstOrFail()->article;
+        }
+        else
+        {
+            $articles = Article::latest()->get();
+
+        }
         return view('article.index',['articles'=>$articles]);
     }
     public function create(){
-        return view('article.create');
-
+        $tags=Tag::all();
+        return view('article.create',['tags'=>$tags]);
     }
     public function store(){
+        $this->validateArticle();
+        $article=new Article(request(['title','excerpt','body']));
+        $article->user_id=1;
+        $article->save();
+        $article->tags()->attach(request('tags'));
 
-        request()->validate([
-            'title'=>'required',
-            'excerpt'=>'required',
-            'body'=>'required'
-        ]);
-        $title = request()->title;
-        $excerpt = request()->excerpt;
-        $body = request()->body;
-        $article = Article::create([
-            'title' => $title,
-            'excerpt' => $excerpt,
-            'body' => $body
-        ]);
         return redirect('/articles');
 
     }
@@ -43,11 +44,7 @@ class ArticleController extends Controller
 
     }
     public function update(Article $article){
-        $article->update([
-            'title' => request()->title,
-            'excerpt' => request()->excerpt,
-            'body' => request()->body
-        ]);
+        $article->update($this->validateArticle());
         return redirect('/articles/'.$article->id);
     }
     public function destroy(Article $article){
@@ -55,4 +52,16 @@ class ArticleController extends Controller
         return redirect('/article');
 
     }
+    protected function validateArticle(){
+        return request()->validate([
+
+                'title' =>'required' ,
+                'excerpt' => 'required' ,
+                'body' => 'required' ,
+                'tag'=>'exists:tags,id'
+        ]);
+
+
+    }
+
 }

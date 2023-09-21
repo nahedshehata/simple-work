@@ -30,6 +30,9 @@
 
             </div>
         </div>
+
+
+
          <div class="field">
 
              <label class="label" for="body">Body</label>
@@ -38,6 +41,27 @@
                  <textarea class="textarea" name="body" id="body"></textarea>
              </div>
          </div>
+
+
+         <div class="field">
+
+             <label class="label" for="tag">Tags</label>
+
+             <div class="control">
+                 <select   name="tags[]" >
+                     @foreach($tags as $tag)
+                     <option value="{{$tag->id}}" >{{$tag->name}}</option>
+                     @endforeach
+
+                 </select>
+                 @error('tags')
+                 <p class="help is-danger" >{{$message}}</p>
+                 @enderror
+             </div>
+         </div>
+
+
+
         <div class="field is-grouped">
             <div class="control">
                 <button   class="button is-link" type="submit">Submit</button>
